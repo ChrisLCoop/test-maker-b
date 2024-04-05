@@ -4,11 +4,11 @@ server {
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
-        root /home/ubuntu/maker-3d-server;
+        root /home/ubuntu/test-maker-b;
     }
 
     location /upload/ {
-        root /home/ubuntu/maker-3d-server;
+        root /home/ubuntu/test-maker-b;
     }
 
     location / {
