@@ -6,8 +6,8 @@ After=network.target
 [Service]
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/maker-3d-server
-ExecStart=/home/ubuntu/maker-3d-server/venv/bin/gunicorn \
+WorkingDirectory=/home/ubuntu/test-maker-b
+ExecStart=/home/ubuntu/test-maker-b/venv/bin/gunicorn \
           --access-logfile - \
           --workers 3 \
           --bind unix:/run/gunicorn.sock \

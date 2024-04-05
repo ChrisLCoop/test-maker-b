@@ -1,13 +1,13 @@
 server {
     listen 80;
-    server_name 18.118.1.165;
+    server_name 18.116.34.75;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         root /home/ubuntu/maker-3d-server;
     }
 
-    location /media/ {
+    location /upload/ {
         root /home/ubuntu/maker-3d-server;
     }
 
