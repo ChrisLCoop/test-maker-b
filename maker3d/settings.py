@@ -166,7 +166,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
-
 PAYPAL_TEST = True
