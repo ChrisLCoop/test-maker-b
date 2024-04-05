@@ -7,7 +7,7 @@ server {
         root /home/ubuntu/test-maker-b;
     }
 
-    location /upload/ {
+    location /media/ {
         root /home/ubuntu/test-maker-b;
     }
 
