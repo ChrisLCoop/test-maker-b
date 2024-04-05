@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Maker 3D</title>
+    <link rel="stylesheet" href="{% static 'css/loandreg.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.png' %}" rel="icon" />
+  </head>
+  <body>
+    <!-- NAVBAR CREATION -->
+    <header class="header">
+      <nav class="navbar">
+        <a href="/">Inicio</a>
+        <a href="/tienda">Tienda</a>
+        <!--
+        <a href="#">Contacto</a>-->
+      </nav>
+    </header>
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+      <div class="item">
+        <h2 class="logo">Maker 3D</h2>
+        <div class="text-item">
+          <h2>Bienvenido! <br /><span> A Nuestra Tienda </span></h2>
+          <p>
+            Agradecemos su visita y disfrute de los diseños que tenemos para
+            usted!
+          </p>
+          <div class="social-icon">
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-youtube"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="login-section">
+        <div class="form-box login">
+          <form action="" method="POST">
+            {% csrf_token %}
+            <h2>Login</h2>
+            <input type="hidden" name="destino" value="{{destino}}"/>
+            <div class="input-box">
+              <span class="icon"><i class="bx bxs-envelope"></i></span>
+              <input type="email" required name="login_usuario" />
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><i class="bx bxs-lock-alt"></i></span>
+              <input type="password" required name="login_password"/>
+              <label>Password</label>
+            </div>
+            <div class="remember-password">
+              <label for=""><input type="checkbox" />Remember Me</label>
+              <a href="#">Forget Password</a>
+            </div>
+            <p>{{mensajeError}}</p>
+            <button class="btn">Ingresar</button>
+            <div class="create-account">
+              <p>
+                Es nuevo?_
+                <a href="#" class="register-link">Registrece</a>
+              </p>
+            </div>
+          </form>
+        </div>
+        <div class="form-box register">
+          <form action="/usuario/add" method="POST">
+            {% csrf_token %}
+            
+            <h2>Nuevo Usuario</h2>
+            <!--
+            <div class="input-box">
+              <span class="icon"><i class="bx bxs-user"></i></span>
+              <input type="text" required />
+              <label>Username</label>
+            </div>-->
+            <div class="input-box">
+              <span class="icon"><i class="bx bxs-envelope"></i></span>
+              <input type="email" required name="nuevo_usuario" />
+              <label>Email</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><i class="bx bxs-lock-alt"></i></span>
+              <input type="password" required name="nuevo_password" />
+              <label>Password</label>
+            </div>
+            <div class="input-box">
+              <span class="icon"><i class="bx bxs-lock-alt"></i></span>
+              <input type="password" required name="password" />
+              <label>Password</label>
+            </div>
+            <div class="remember-password">
+              <label for=""
+                ><input type="checkbox" />I agree with this statment</label
+              >
+            </div>
+            <button class="btn">Registrarce</button>
+            <div class="create-account">
+              <p>
+                Already Have An Account?
+                <a href="#" class="login-link">Sign In</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- SIGN UP FORM CREATION -->
+
+    <script src="{% static 'js/reg.js' %}"></script>
+  </body>
+</html>

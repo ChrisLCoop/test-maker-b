@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="/">Inicio</a>
+                <a class="breadcrumb-item text-dark" href="/tienda">Tienda</a>
+                <span class="breadcrumb-item active">Lista de Productos</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+
+<!-- Shop Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <!-- Shop Sidebar Start -->
+        {% include 'includes/tienda/filtros.html' %}
+        <!-- Shop Sidebar End -->
+
+
+        <!-- Shop Product Start -->
+        {% include 'includes/tienda/producto.html' %}
+        <!-- Shop Product End -->
+    </div>
+</div>
+<!-- Shop End -->
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="container">
+  <div class="container-fluid">
+    <h1 class="maincont-ttl">Cuenta de {{user.username}}</h1>
+    <h2>Datos Personales</h2>
+    <!---->
+    <div class="container-sm mx-auto" >
+      <form action="/cliente/update" method="POST">
+        {% csrf_token %}
+        {{frm_cliente.as_p}}
+        <div class="container-sm">
+          <p class="content-input">
+            <input class="btnfos-2" type="submit" value="Actualizar Datos">
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

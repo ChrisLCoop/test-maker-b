@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    server_name 18.118.1.165;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/ubuntu/maker-3d-server;
+    }
+
+    location /media/ {
+        root /home/ubuntu/maker-3d-server;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}

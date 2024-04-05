@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" href="/">Inicio</a>
+                <a class="breadcrumb-item text-dark" href="/tienda">Tienda</a>
+                <span class="breadcrumb-item active">Lista de Productos</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- Lista de compras adquiridas. -->
+<div class="container">
+    <div class="container-sm">
+        <table class="table table-hover table-dark">
+            <thead>
+              <tr>
+                <!--
+                <th scope="col">#</th>-->
+                <th scope="col">Nombre del Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for producto in mis_productos %}
+                <tr><!--
+                    <th scope="row">1</th>-->
+                    <td><a class="text-primary mb-2" href="producto/{{producto.producto_id}}">{{producto}}</a></td>
+                    <td>{{producto.cantidad}}</td>
+                    <td>{{producto.subtotal}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+    </div>
+</div>
+
+
+{% endblock %}
