@@ -324,7 +324,15 @@ legend {
   
 }
 
+/*---- btn carrito navbar-----*/
 
+@media (min-width:992px){
+  #btn-carrito-nav-xd{
+    display: none;
+  }
+}
+
+/*---- btn carrito navbar-----*/
 
 progress {
   vertical-align: baseline;
