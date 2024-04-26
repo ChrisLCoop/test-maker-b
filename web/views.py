@@ -313,7 +313,7 @@ def registrar_pedido(request):
 
         paypal_dict = {
         "business": "sb-oatr4730008246@business.example.com",
-        "amount": monto_total,
+        "amount": ((monto_total / 3.76 ) * 1.0868),
         "item_name": "PEDIDO NRO : " + obj_pedido.nro_pedido,
         "invoice": obj_pedido.id,
         "notify_url": request.build_absolute_uri(reverse('paypal-ipn')),
